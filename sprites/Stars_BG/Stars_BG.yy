@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 3,
-  "bbox_right": 42,
-  "bbox_top": 1,
-  "bbox_bottom": 21,
+  "bbox_left": 27,
+  "bbox_right": 263,
+  "bbox_top": 14,
+  "bbox_bottom": 125,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 46,
-  "height": 24,
+  "width": 300,
+  "height": 150,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"81122d6b-dbac-4844-86cd-a27489a069ca","path":"sprites/UFO/UFO.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"81122d6b-dbac-4844-86cd-a27489a069ca","path":"sprites/UFO/UFO.yy",},"LayerId":{"name":"cab9e615-669a-4349-8c3d-d5cf2a6a20d2","path":"sprites/UFO/UFO.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"UFO","path":"sprites/UFO/UFO.yy",},"resourceVersion":"1.0","name":"81122d6b-dbac-4844-86cd-a27489a069ca","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"11bd3bdc-4498-4287-9bb8-6fb318ace1bf","path":"sprites/Stars_BG/Stars_BG.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"11bd3bdc-4498-4287-9bb8-6fb318ace1bf","path":"sprites/Stars_BG/Stars_BG.yy",},"LayerId":{"name":"c8263ae1-43ed-4fa6-8510-b9703b7771ec","path":"sprites/Stars_BG/Stars_BG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"Stars_BG","path":"sprites/Stars_BG/Stars_BG.yy",},"resourceVersion":"1.0","name":"11bd3bdc-4498-4287-9bb8-6fb318ace1bf","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"UFO","path":"sprites/UFO/UFO.yy",},
+    "spriteId": {"name":"Stars_BG","path":"sprites/Stars_BG/Stars_BG.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"8fd2d2f6-9154-444f-b143-76cd6254a2ce","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"81122d6b-dbac-4844-86cd-a27489a069ca","path":"sprites/UFO/UFO.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"316cb3f8-b050-4977-9460-11dc33dedc94","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"11bd3bdc-4498-4287-9bb8-6fb318ace1bf","path":"sprites/Stars_BG/Stars_BG.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"UFO","path":"sprites/UFO/UFO.yy",},
+    "parent": {"name":"Stars_BG","path":"sprites/Stars_BG/Stars_BG.yy",},
     "resourceVersion": "1.3",
-    "name": "UFO",
+    "name": "Stars_BG",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cab9e615-669a-4349-8c3d-d5cf2a6a20d2","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c8263ae1-43ed-4fa6-8510-b9703b7771ec","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "UFO",
+  "name": "Stars_BG",
   "tags": [],
   "resourceType": "GMSprite",
 }

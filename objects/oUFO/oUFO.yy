@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "UFO",
-    "path": "sprites/UFO/UFO.yy",
+    "name": "UFO_Sheet_strip8",
+    "path": "sprites/UFO_Sheet_strip8/UFO_Sheet_strip8.yy",
   },
   "solid": false,
   "visible": true,
