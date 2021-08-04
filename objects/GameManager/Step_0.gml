@@ -1,3 +1,8 @@
+if (!instance_exists(oPlayer) && !instance_exists(oPlayer_Two))
+{
+	currentState = GameState.postGame;
+}
+
 if (beginSpawn)
 {
 	switch (currentPattern)
@@ -152,5 +157,6 @@ switch (currentState)
 		}
 		break;
 	case GameState.postGame:
+		beginSpawn = false;
 		break;
 }

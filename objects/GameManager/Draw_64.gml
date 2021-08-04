@@ -11,3 +11,9 @@ if (currentState = GameState.gameStarting) || (currentState = GameState.gameStar
 	DrawSetText(c_white, defaultFont, fa_center, fa_middle);
 	draw_text(display_get_gui_width()/2, 40, round(currentScore));
 }
+
+if (currentState = GameState.postGame)
+{
+	DrawSetText(c_white, defaultFont, fa_center, fa_middle);
+	draw_text(display_get_gui_width()/2, display_get_gui_height()/2, "Your score: "+ string(round(currentScore)));
+}
