@@ -3,6 +3,7 @@ switch (currentState)
 	default:
 		break;
 	case GameState.preGame:
+		hasPressedDownKey = keyboard_check(vk_down);
 		isPressingRightKey = keyboard_check(vk_right);
 		isPressingLeftKey = keyboard_check(vk_left);
 		hasPressedJumpKey = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_up);
@@ -52,26 +53,41 @@ switch (currentState)
 		//Jumping
 		if (isTouchingGround)
 		{
-			if (hasPressedJumpKey)
+			if (vsp == 0)
+			{
+				jumpKeyStroke = 0;
+				grv = 0.5;
+				dashDownActivated = false;
+			}
+			if (hasPressedJumpKey) && (jumpKeyStroke < 1)
 			{
 				jumpKeyStroke += 1;
 				vsp = -jumpSpd;
 				isJumping = true;
 				sprite_index = Jump;
 			}
-	
-			if (vsp == 0)
+			else if (jumpBufferEnabled) && (jumpKeyStroke < 1)
 			{
-				jumpKeyStroke = 0;
+				jumpKeyStroke += 1;
+				vsp = -jumpSpd;
+				isJumping = true;
+				sprite_index = Jump;
+				jumpBufferEnabled = false;
 			}
 		}
 		else
 		{
-			grv = 0.1;
+			//buffer jump
+			if (hasPressedJumpKey)
+			{
+				//set to true
+				jumpBufferEnabled = true;
+				alarm[1] = jumpBufferTime;
+			}
 			if (vsp > 0) 
 			{ 
 				isJumping = false;
-				sprite_index = Landing; 
+				sprite_index = Landing;
 			}
 		}
 
@@ -95,44 +111,15 @@ switch (currentState)
 		}
 		if (x>350)
 		{
-			currentState = GameState.gameStarting;	
+			GameManager.currentState = GameState.gameStarting;	
 		}
 		break;
 	case GameState.gameStarting:
 		sprite_index = Idle;
-		var readyToStart = false;
-		if (instance_exists(oUFO))
-		{
-			oUFO.x = oUFO.x - 1;
-			readyToStart = false;
-		}
-		else
-		{
-			readyToStart = true;	
-		}
-		if (x > 95)
-		{
-			x = x - 1;
-			readyToStart = false;
-		}
-		else
-		{
-			readyToStart = true;	
-		}
-		if (readyToStart == true)
-		{
-			currentState = GameState.gameStarted;	
-		}
-		else
-		{
-			//Move background
-			layer_hspeed("Backgrounds_1", -0.2);
-			layer_hspeed("Backgrounds_2", -0.25);
-			layer_hspeed("Backgrounds_3", -0.7);
-		}
 		break;
 	case GameState.gameStarted:
 		if (!isJumping) { sprite_index = Running; }
+		hasPressedDownKey = keyboard_check(vk_down);
 		isPressingRightKey = keyboard_check(vk_right);
 		isPressingLeftKey = keyboard_check(vk_left);
 		hasPressedJumpKey = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_up);
@@ -144,27 +131,19 @@ switch (currentState)
 			hsp = moveSpd * horizontalDirection;
 			if (isPressingLeftKey)
 			{
-				layer_hspeed("Backgrounds_1", -0.2+0.1);
-				layer_hspeed("Backgrounds_2", -0.25+0.1);
-				layer_hspeed("Backgrounds_3", -0.7+0.1);
 				image_xscale = -1;
 			}
 			if (isPressingRightKey)
 			{
-				layer_hspeed("Backgrounds_1", -0.2-0.1);
-				layer_hspeed("Backgrounds_2", -0.25-0.1);
-				layer_hspeed("Backgrounds_3", -0.7-0.1);
 				image_xscale = 1;
 			}
 		}
 		else
 		{
-			layer_hspeed("Backgrounds_1", -0.1);
-			layer_hspeed("Backgrounds_2", -0.25);
-			layer_hspeed("Backgrounds_3", -0.7);
 			//Apply friction if grounded
 			if (isTouchingGround)
 			{
+				image_xscale = 1;
 				if (hsp > 0)
 				{
 					hsp = max(0, hsp - 0.2);	
@@ -190,26 +169,54 @@ switch (currentState)
 		//Jumping
 		if (isTouchingGround)
 		{
-			if (hasPressedJumpKey)
+			if (vsp == 0)
+			{
+				jumpKeyStroke = 0;
+				grv = 0.5;
+				dashDownActivated = false;
+			}
+			if (hasPressedJumpKey) && (jumpKeyStroke < 1)
 			{
 				jumpKeyStroke += 1;
 				vsp = -jumpSpd;
 				isJumping = true;
 				sprite_index = Jump;
 			}
-	
-			if (vsp == 0)
+			else if (jumpBufferEnabled) && (jumpKeyStroke < 1)
 			{
-				jumpKeyStroke = 0;
+				jumpKeyStroke += 1;
+				vsp = -jumpSpd;
+				isJumping = true;
+				sprite_index = Jump;
+				jumpBufferEnabled = false;
 			}
 		}
 		else
 		{
-			grv = 0.1;
+			//buffer jump
+			if (hasPressedJumpKey)
+			{
+				//set to true
+				jumpBufferEnabled = true;
+				alarm[1] = jumpBufferTime;
+			}
+			//Dash downwards
+			if (hasPressedDownKey)
+			{
+				//dashDownActivated = true;	
+			}
+			if (dashDownActivated)
+			{
+				grv = 1;
+			}
+			else
+			{
+				grv = 0.5;
+			}
 			if (vsp > 0) 
 			{ 
 				isJumping = false;
-				sprite_index = Landing; 
+				sprite_index = Landing;
 			}
 		}
 
