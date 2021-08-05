@@ -38,7 +38,7 @@
     "spriteId": {"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 10.0,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

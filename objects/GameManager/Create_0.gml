@@ -9,10 +9,13 @@ enum GameState
 currentState = GameState.preGame;
 
 increasedSpeed = true;
-speedIncrementInterval = 20 * room_speed;
+speedIncrementInterval = 10 * room_speed;
 game_speed = 1;
 
 currentScore = 0;
 
 playerOneActive = false;
 playerTwoActive = false;
+
+currentDot = 0;
+initiatedDotAlarm = false;

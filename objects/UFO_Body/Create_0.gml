@@ -11,7 +11,8 @@ distanceClose = 100;
 enum AIStates
 {
 	lull,
-	kiting
+	kiting,
+	postGame
 }
 
 currentState = AIStates.lull;

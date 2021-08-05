@@ -1,5 +1,6 @@
 if (GameManager.currentState == GameState.gameStarted)
 {
+	//Determine the furthest player
 	if instance_exists(oPlayer) && instance_exists(oPlayer_Two)
 	{
 		//Check who is the furthest on the right
@@ -20,7 +21,12 @@ if (GameManager.currentState == GameState.gameStarted)
 	{
 		furthestPlayer = oPlayer_Two;	
 	}
+	else
+	{
+		furthestPlayer = noone;	
+	}
 	
+	//UFO Boundaries
 	if (y > 110)
 	{
 		y = 110;	
@@ -35,14 +41,29 @@ if (GameManager.currentState == GameState.gameStarted)
 	{
 		x = 325;
 	}
+	
+	//Check if furthest player still within max distance or in the "danger zone"
+	if instance_exists(oPlayer) || instance_exists(oPlayer_Two)
+	{
+		if ((furthestPlayer.x > 285) && (furthestPlayer.x < 400))
+		{
+		currentState = AIStates.kiting;
+		}
+	}
+	else
+	{
+		currentState = AIStates.postGame;	
+	}
+	
 	switch (currentState)
 	{
 		default:
 			break;
 		case AIStates.lull:
-			//Check if player on the right of screen
-			if (furthestPlayer.x > 285) && (furthestPlayer.x < 400)
+			show_debug_message("Lull state");
+			if (reachedXDestination) && (reachedYDestination)
 			{
+				UFO_Cannon.currentPattern = Pattern.pattern_1;
 				currentState = AIStates.kiting;
 			}
 			else
@@ -53,10 +74,14 @@ if (GameManager.currentState == GameState.gameStarted)
 					{
 						x = x + 1;	
 					}
-					if (x > xTo)
+					else if (x > xTo)
 					{
 						x = x - 1;
-					}	
+					}
+					else
+					{
+						reachedXDestination = true;
+					}
 				}
 				if (!reachedYDestination)
 				{
@@ -64,46 +89,46 @@ if (GameManager.currentState == GameState.gameStarted)
 					{
 						y = y - 1;	
 					}
-					if (y < yTo)
+					else if (y < yTo)
 					{
 						y = y + 1;	
 					}	
-				}
-				if (reachedXDestination) && (reachedYDestination)
-				{
-					currentState = AIStates.kiting;	
+					else
+					{
+						reachedYDestination = true;
+					}
 				}
 			}
 			break;
 		case AIStates.kiting:
+			show_debug_message("Kiting state");
 			if (currentNoMovementTimer >= noMovementTimer)
 			{
 				xTo = irandom_range(190,320);
 				yTo = irandom_range(15,100);
 				currentState = AIStates.lull;
+				reachedXDestination = false;
+				reachedYDestination = false;
+				currentNoMovementTimer = 0;
 			}
 			//Check if player on the right of screen
 			if (furthestPlayer.x > 285) && (furthestPlayer.x < 400)
 			{
-				UFO_Cannon.currentPattern = Pattern.pattern_1;
 				y = y + 1;
 				x = x + 1;
-				show_debug_message("Player in zone");
 			}
 			else
 			{
 				//Furthest player too close
 				if (x - furthestPlayer.x < 60)
 				{
-					UFO_Cannon.currentPattern = Pattern.pattern_1;
 					x = x + 1;
 					//Move UFO down to ground
 					y = y + 1;
 				}
 				//Furthest player too far
-				else if (x - furthestPlayer.x > 100)
+				else if (x - furthestPlayer.x > 160)
 				{
-					UFO_Cannon.currentPattern = Pattern.pattern_2;
 					x = x - 1;
 				}
 				else
@@ -112,5 +137,7 @@ if (GameManager.currentState == GameState.gameStarted)
 				}
 			}
 			break;
+		case AIStates.postGame:
+				break;
 		}
 }

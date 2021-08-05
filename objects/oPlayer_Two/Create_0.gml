@@ -17,3 +17,7 @@ jumpBufferTime = 0.2 * room_speed;
 jumpBufferEnabled = false;
 
 currentState = GameState.preGame;
+
+isDead = false;
+
+godMode = false;
