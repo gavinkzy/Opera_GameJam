@@ -1,76 +1,33 @@
-if (!instance_exists(oPlayer) && !instance_exists(oPlayer_Two))
-{
-	currentState = GameState.postGame;
-}
-
-if (beginSpawn)
-{
-	switch (currentPattern)
-	{
-		default:
-			break;
-		case Pattern.pattern_1:
-			//Infinite spawning at fixed interval with increasing speed according to game_speed
-			if (enableSpawn)
-			{
-				alarm[0] = min(spawnDelay, spawnDelay + 1 - 1 * game_speed);
-				var xPos = x;
-				var yPos = 120;
-				if (noOfSpawns > 0)
-				{
-					instance_create_layer(xPos, yPos, "Instances", obstacles[irandom_range(0,2)])
-				}
-				enableSpawn = false;
-			}
-			break;
-			
-		case Pattern.pattern_2:
-			if (enableSpawn)
-			{
-				alarm[0] = min(spawnDelay, spawnDelay + 1 - 1 * game_speed);
-				var xPos = x;
-				var yPos = 120;
-				if (noOfSpawns > 0)
-				{
-					with (instance_create_layer(xPos, yPos, "Instances", obstacles[irandom_range(0,2)]))
-					{
-						hsp = -2;
-						vsp = -6;
-					}
-				}
-				enableSpawn = false;
-			}
-			break;
-			
-			case Pattern.pattern_3:
-				if (!enableSpawn)
-				{
-					alarm[1] = spawnInterval;	
-				}
-				if (enableSpawn)
-				{
-					alarm[0] = min(spawnDelay, spawnDelay + 1 - 1 * game_speed);
-					var xPos = x;
-					var yPos = 120;
-					if (noOfSpawns > 0)
-					{
-						with (instance_create_layer(xPos, yPos, "Instances", obstacles[irandom_range(0,2)]))
-						{
-							hsp = -2;
-							vsp = -6;
-						}
-					}
-					enableSpawn = false;
-				}
-			break;
-	}
-}
-
 switch (currentState)
 {
 	default:
 		break;
 	case GameState.preGame:
+		if (!instance_exists(oPlayer))
+		{
+			var hasPressedDownKey = keyboard_check_pressed(vk_down);
+			var hasPressedRightKey = keyboard_check_pressed(vk_right);
+			var hasPressedLeftKey = keyboard_check_pressed(vk_left);
+			var hasPressedJumpKey = keyboard_check_pressed(vk_up);
+			if (hasPressedDownKey) || (hasPressedRightKey) || (hasPressedLeftKey) || (hasPressedJumpKey)
+			{
+				instance_create_layer(190,30,"Instances", oPlayer);
+				playerOneActive = true;
+			}
+		}
+
+		if (!instance_exists(oPlayer_Two))
+		{
+			var hasPressedDownKey = keyboard_check_pressed(ord("S"));
+			var hasPressedRightKey = keyboard_check_pressed(ord("D"));
+			var hasPressedLeftKey = keyboard_check_pressed(ord("A"));
+			var hasPressedJumpKey = keyboard_check_pressed(ord("W"));
+			if (hasPressedDownKey) || (hasPressedRightKey) || (hasPressedLeftKey) || (hasPressedJumpKey)
+			{
+				instance_create_layer(190,30,"Instances", oPlayer_Two);
+				playerTwoActive = true;
+			}
+		}
 		break;
 	case GameState.gameStarting:
 		var readyToStart = false;
@@ -113,6 +70,30 @@ switch (currentState)
 				}
 			}
 		}
+		//Game Restart
+		if (playerOneActive) || (playerTwoActive)
+		{
+			if (playerOneActive) && (!instance_exists(oPlayer))
+			{
+				instance_create_layer(95,30,"Instances", oPlayer);
+			}
+			
+			if (playerTwoActive) && (!instance_exists(oPlayer_Two))
+			{
+				instance_create_layer(85,30,"Instances", oPlayer_Two);	
+			}
+		}
+		
+		if (!instance_exists(UFO_Body))
+		{
+			instance_create_layer(255,30, "UFO_Instance", UFO_Body);	
+		}
+		
+		if (!instance_exists(UFO_Cannon))
+		{
+			instance_create_layer(255,30, "UFO_Instance", UFO_Cannon);
+		}
+		
 		if (readyToStart == true)
 		{
 			currentState = GameState.gameStarted;
@@ -140,23 +121,45 @@ switch (currentState)
 		}	
 		break;
 	case GameState.gameStarted:
-		beginSpawn = true;
+		if ((!instance_exists(oPlayer) && !instance_exists(oPlayer_Two)))
+		{
+			currentState = GameState.postGame;
+		}
 		if (increasedSpeed)
 		{
 			increasedSpeed = false;
 			alarm[2] = speedIncrementInterval;	
 		}
-		//Pattern Manager
-		if (enablePatternChange)
-		{
-			enablePatternChange = false;
-			alarm[3] = patternChangeInterval;
-			currentPattern = irandom_range(0,2);
-			spawnDelay = max(25, spawnDelay - 1); 
-			show_debug_message(spawnDelay);
-		}
 		break;
 	case GameState.postGame:
-		beginSpawn = false;
+		if (instance_exists(UFO_Cannon))
+		{
+			with (UFO_Cannon)
+			{
+				beginSpawn = false;
+			}
+		}
+		if (keyboard_check_pressed(vk_enter))
+		{
+			currentState = GameState.gameStarting;
+			if (instance_exists(Obstacles))
+			{
+				instance_destroy(Obstacles);	
+			}
+			if (instance_exists(UFO_Body))
+			{
+				instance_destroy(UFO_Body);	
+			}
+			if (instance_exists(UFO_Cannon))
+			{
+				instance_destroy(UFO_Cannon);	
+			}
+			currentScore = 0;
+			game_speed = 1;
+		}
+		else if (keyboard_check(mb_any))
+		{
+			room_restart();	
+		}
 		break;
 }

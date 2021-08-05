@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 9,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -24,21 +24,21 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"887437d2-78b1-424c-9664-37ea75b476be","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"887437d2-78b1-424c-9664-37ea75b476be","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":{"name":"d57d0cc1-946f-4933-adc9-170ece0c80fd","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"887437d2-78b1-424c-9664-37ea75b476be","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e68e2a4a-3ef6-4a62-9230-a1d4910ea2b0","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e68e2a4a-3ef6-4a62-9230-a1d4910ea2b0","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":{"name":"d57d0cc1-946f-4933-adc9-170ece0c80fd","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"e68e2a4a-3ef6-4a62-9230-a1d4910ea2b0","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"00387659-8aef-437c-908c-735139e297fa","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"00387659-8aef-437c-908c-735139e297fa","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":{"name":"d57d0cc1-946f-4933-adc9-170ece0c80fd","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"00387659-8aef-437c-908c-735139e297fa","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"df96b44e-e87d-4889-bb4b-5a49756022a7","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"df96b44e-e87d-4889-bb4b-5a49756022a7","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":{"name":"64ef807a-0970-4020-a972-49c6c58a2144","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"df96b44e-e87d-4889-bb4b-5a49756022a7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8c8a33f8-613a-43d4-a3a5-0be1d149ee0e","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8c8a33f8-613a-43d4-a3a5-0be1d149ee0e","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":{"name":"64ef807a-0970-4020-a972-49c6c58a2144","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"8c8a33f8-613a-43d4-a3a5-0be1d149ee0e","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1dd28c1b-34fa-44df-9cca-156d79f310a3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1dd28c1b-34fa-44df-9cca-156d79f310a3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"LayerId":{"name":"64ef807a-0970-4020-a972-49c6c58a2144","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","name":"1dd28c1b-34fa-44df-9cca-156d79f310a3","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 10.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -47,9 +47,9 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"96009270-352e-4606-a6f8-617865153eef","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"887437d2-78b1-424c-9664-37ea75b476be","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"f72b58b5-4729-4979-8ab2-8d7557fca3a1","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e68e2a4a-3ef6-4a62-9230-a1d4910ea2b0","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"01e6269b-3e55-44a6-8fc2-3d8bb864229b","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"00387659-8aef-437c-908c-735139e297fa","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"275a659f-f600-45d4-b9f3-89b7ca2420fd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"df96b44e-e87d-4889-bb4b-5a49756022a7","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e2750c21-471b-47f3-b453-b615d1165471","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8c8a33f8-613a-43d4-a3a5-0be1d149ee0e","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d9adfdcb-4919-415c-a036-8a972e49782e","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1dd28c1b-34fa-44df-9cca-156d79f310a3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -62,8 +62,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 32,
+    "yorigin": 39,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"UFO_Dispenser_Cannon_strip3","path":"sprites/UFO_Dispenser_Cannon_strip3/UFO_Dispenser_Cannon_strip3.yy",},
@@ -73,7 +73,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d57d0cc1-946f-4933-adc9-170ece0c80fd","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"64ef807a-0970-4020-a972-49c6c58a2144","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
