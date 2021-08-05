@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"Landing","path":"sprites/Landing/Landing.yy",},"order":2,},
+    {"id":{"name":"sndPop","path":"sounds/sndPop/sndPop.yy",},"order":1,},
     {"id":{"name":"Running","path":"sprites/Running/Running.yy",},"order":3,},
     {"id":{"name":"Jump_2","path":"sprites/Jump_2/Jump_2.yy",},"order":1,},
     {"id":{"name":"Idle_2","path":"sprites/Idle_2/Idle_2.yy",},"order":0,},
@@ -25,6 +26,7 @@
     {"id":{"name":"GameManager","path":"objects/GameManager/GameManager.yy",},"order":2,},
     {"id":{"name":"Stars_BG","path":"sprites/Stars_BG/Stars_BG.yy",},"order":3,},
     {"id":{"name":"Landing_2","path":"sprites/Landing_2/Landing_2.yy",},"order":2,},
+    {"id":{"name":"Stars_BG_Far","path":"sprites/Stars_BG_Far/Stars_BG_Far.yy",},"order":13,},
     {"id":{"name":"Sprite_Orange","path":"sprites/Sprite_Orange/Sprite_Orange.yy",},"order":8,},
     {"id":{"name":"Running_2","path":"sprites/Running_2/Running_2.yy",},"order":3,},
     {"id":{"name":"oPlayer_Two","path":"objects/oPlayer_Two/oPlayer_Two.yy",},"order":9,},

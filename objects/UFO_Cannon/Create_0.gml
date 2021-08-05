@@ -5,7 +5,7 @@ obstacles[1] = Obstacle_Orange;
 obstacles[2] = Obstacle_Yellow;
 enableSpawn = true;
 noOfSpawns = 1;
-spawnDelay = 0.5 * room_speed;
+spawnDelay = 0.6 * room_speed;
 
 enum Pattern
 {

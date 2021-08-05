@@ -18,3 +18,4 @@ currentState = AIStates.lull;
 
 noMovementTimer = 5 * room_speed;
 currentNoMovementTimer = 0;
+furthestPlayer = 0;

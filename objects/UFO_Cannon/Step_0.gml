@@ -6,6 +6,7 @@ if (instance_exists(UFO_Body))
 
 if (GameManager.currentState == GameState.gameStarted)
 {
+	
 	beginSpawn = true;
 	//Pattern Manager
 	if (enablePatternChange)
@@ -35,6 +36,7 @@ if (beginSpawn)
 					image_index = 0;
 					image_speed = 1;
 					instance_create_layer(xPos, yPos, "Instances", obstacles[irandom_range(0,2)])
+					audio_sound_gain(audio_play_sound(sndPop,1,false), 0.5, 1);
 				}
 				enableSpawn = false;
 			}
@@ -48,12 +50,14 @@ if (beginSpawn)
 				var yPos = y+8;
 				if (noOfSpawns > 0)
 				{
-					image_index = 0;
-					image_speed = 1;
+
 					with (instance_create_layer(xPos, yPos, "Instances", obstacles[irandom_range(0,2)]))
 					{
+						image_index = 0;
+						image_speed = 1;
 						hsp = -2;
 						vsp = -3;
+						audio_sound_gain(audio_play_sound(sndPop,1,false), 0.5, 1);
 					}
 				}
 				enableSpawn = false;
@@ -68,12 +72,13 @@ if (beginSpawn)
 					var yPos = y+8;
 					if (noOfSpawns > 0)
 					{
-						image_index = 0;
-						image_speed = 1;
 						with (instance_create_layer(xPos, yPos, "Instances", obstacles[irandom_range(0,2)]))
 						{
+							image_index = 0;
+							image_speed = 1;
 							hsp = -2;
 							vsp = -6;
+							audio_sound_gain(audio_play_sound(sndPop,1,false), 0.5, 1);
 						}
 					}
 					enableSpawn = false;

@@ -117,7 +117,8 @@ switch (currentState)
 			//Move background
 			layer_hspeed("Backgrounds_1", -0.2);
 			layer_hspeed("Backgrounds_2", -0.25);
-			layer_hspeed("Backgrounds_3", -0.7);
+			layer_hspeed("Backgrounds_3", -0.3);
+			layer_hspeed("Backgrounds_4", -0.4);
 		}	
 		break;
 	case GameState.gameStarted:

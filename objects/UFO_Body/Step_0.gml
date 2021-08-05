@@ -1,5 +1,26 @@
 if (GameManager.currentState == GameState.gameStarted)
 {
+	if instance_exists(oPlayer) && instance_exists(oPlayer_Two)
+	{
+		//Check who is the furthest on the right
+		if (oPlayer.x > oPlayer_Two.x)
+		{
+			furthestPlayer = oPlayer;	
+		}
+		else if (oPlayer.x < oPlayer_Two.x)
+		{
+			furthestPlayer = oPlayer_Two;	
+		}
+	}
+	else if instance_exists(oPlayer)
+	{
+		furthestPlayer = oPlayer;
+	}
+	else if instance_exists(oPlayer_Two)
+	{
+		furthestPlayer = oPlayer_Two;	
+	}
+	
 	if (y > 110)
 	{
 		y = 110;	
@@ -19,78 +40,44 @@ if (GameManager.currentState == GameState.gameStarted)
 		default:
 			break;
 		case AIStates.lull:
-			if (point_distance(x, y, xTo, yTo) > 5)
-			{
-				move_towards_point(xTo, yTo, 1);
-			}
-			else
+			//Check if player on the right of screen
+			if (furthestPlayer.x > 285) && (furthestPlayer.x < 400)
 			{
 				currentState = AIStates.kiting;
 			}
-			
+			else
+			{
+				if (point_distance(x, y, xTo, yTo) > 5)
+				{
+					move_towards_point(xTo, yTo, 1);
+				}
+				else
+				{
+					currentState = AIStates.kiting;
+				}
+			}
 			break;
 		case AIStates.kiting:
 			if (currentNoMovementTimer >= noMovementTimer)
 			{
-				xTo = irandom_range(190,350);
+				xTo = irandom_range(190,320);
 				yTo = irandom_range(15,100);
 				currentState = AIStates.lull;
 			}
-			UFO_Cannon.currentPattern = Pattern.pattern_1;
-			// Target Player 1 if Player 1 exists only.
-			if instance_exists(oPlayer) && !instance_exists(oPlayer_Two)
+			//Check if player on the right of screen
+			if (furthestPlayer.x > 285) && (furthestPlayer.x < 400)
 			{
-				//Player 1 too close
-				if (x - oPlayer.x < 60)
-				{
-					x = x + 1;
-					//Move UFO down to ground
-					y = y + 1;
-				}
-				//Player 1 too far
-				else if (x - oPlayer.x > 100)
-				{
-					x = x - 1;
-				}
-				else
-				{
-					currentNoMovementTimer += 1;
-				}
+				UFO_Cannon.currentPattern = Pattern.pattern_1;
+				y = y + 1;
+				x = x + 1;
+				show_debug_message("Player in zone");
 			}
-			else if instance_exists(oPlayer_Two) && (!instance_exists(oPlayer))
+			else
 			{
-				//Player 2 too close
-				if (x - oPlayer_Two.x < 60)
-				{
-					x = x + 1;
-					//Move UFO down to ground
-					y = y + 1;
-				}
-				//Player 2 too far
-				else if (x - oPlayer_Two.x > 100)
-				{
-					x = x - 1;
-				}
-				else
-				{
-					currentNoMovementTimer += 1;
-				}
-			}
-			else if instance_exists(oPlayer) && instance_exists(oPlayer_Two)
-			{
-				var furthestPlayer = oPlayer;
-				//Check who is the furthest on the right
-				if (oPlayer.x > oPlayer_Two.x)
-				{
-					furthestPlayer = oPlayer;	
-				}
-				else if (oPlayer.x < oPlayer_Two.x)
-				{
-					furthestPlayer = oPlayer_Two;	
-				}
 				//Furthest player too close
 				if (x - furthestPlayer.x < 60)
 				{
+					UFO_Cannon.currentPattern = Pattern.pattern_1;
 					x = x + 1;
 					//Move UFO down to ground
 					y = y + 1;
@@ -98,6 +85,7 @@ if (GameManager.currentState == GameState.gameStarted)
 				//Furthest player too far
 				else if (x - furthestPlayer.x > 100)
 				{
+					UFO_Cannon.currentPattern = Pattern.pattern_2;
 					x = x - 1;
 				}
 				else
@@ -105,10 +93,6 @@ if (GameManager.currentState == GameState.gameStarted)
 					currentNoMovementTimer += 1;
 				}
 			}
-			else
-			{
-				show_debug_message("Both players do not exist");	
-			}
 			break;
-	}
+		}
 }
