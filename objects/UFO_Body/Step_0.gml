@@ -47,13 +47,31 @@ if (GameManager.currentState == GameState.gameStarted)
 			}
 			else
 			{
-				if (point_distance(x, y, xTo, yTo) > 5)
+				if (!reachedXDestination)
 				{
-					move_towards_point(xTo, yTo, 1);
+					if (x < xTo)
+					{
+						x = x + 1;	
+					}
+					if (x > xTo)
+					{
+						x = x - 1;
+					}	
 				}
-				else
+				if (!reachedYDestination)
 				{
-					currentState = AIStates.kiting;
+					if (y > yTo)
+					{
+						y = y - 1;	
+					}
+					if (y < yTo)
+					{
+						y = y + 1;	
+					}	
+				}
+				if (reachedXDestination) && (reachedYDestination)
+				{
+					currentState = AIStates.kiting;	
 				}
 			}
 			break;

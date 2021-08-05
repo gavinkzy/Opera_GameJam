@@ -12,6 +12,7 @@
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"Planets_far","path":"sprites/Planets_far/Planets_far.yy",},"order":5,},
     {"id":{"name":"Planets_near","path":"sprites/Planets_near/Planets_near.yy",},"order":4,},
+    {"id":{"name":"Arial","path":"fonts/Arial/Arial.yy",},"order":1,},
     {"id":{"name":"Obstacle_Blue","path":"objects/Obstacle_Blue/Obstacle_Blue.yy",},"order":4,},
     {"id":{"name":"sGround","path":"sprites/sGround/sGround.yy",},"order":0,},
     {"id":{"name":"Obstacles","path":"objects/Obstacles/Obstacles.yy",},"order":10,},
